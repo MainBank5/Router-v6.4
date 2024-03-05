@@ -5,16 +5,18 @@ const ProfilesPage = () => {
   const profiles = [1, 2, 3, 4, 5, 6]
   return (
     <div>
-      <h1>Projects</h1>
-      <ul>
+      <h1 className="text-4xl text-yellow-300">Projects</h1>
+      <div className="">
+      <ul className="flex flex-col gap-3">
         {profiles.map(profile => (
           <NavLink  key={profile} to={`/profiles/${profile}`} className={({ isActive }) => {
-            return isActive ? 'text-blue-700' : '';
+            return isActive ? 'text-red-500' : '';
           }} >Profile{profile}</NavLink>))}
       </ul>
 
       <Outlet/>
       <button onClick={() => {navigate('/')}}>Go back Home</button>
+      </div>
     </div>
   )
 }
